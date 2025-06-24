@@ -1,9 +1,34 @@
 /* --- Cài đặt chung & Phông chữ --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --secondary-color: #6c757d;
+    --secondary-hover: #5a6268;
+    --success-color: #28a745;
+    --success-hover: #218838;
+    --warning-color: #ffc107;
+    --warning-hover: #e0a800;
+    --danger-color: #dc3545;
+    --danger-hover: #c82333;
+    --info-color: #17a2b8;
+    --info-hover: #138496;
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --border-color: #dee2e6;
+    --body-bg: #f4f7f6;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: var(--body-bg);
+    color: var(--dark-gray);
+    line-height: 1.6;
 }
 
 .container {
@@ -17,12 +42,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+}
+
+.logo-container {
+    flex-shrink: 0; /* Ngăn logo bị co lại */
 }
 
 .logo {
@@ -30,197 +60,211 @@ header {
     vertical-align: middle;
 }
 
-nav ul {
+/* --- Menu Ngang Mới --- */
+.main-navigation {
+    flex-grow: 1; /* Cho phép menu chiếm không gian còn lại */
+    display: flex;
+    justify-content: center; /* Căn giữa các mục menu */
+}
+
+.main-navigation ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các mục menu xuống dòng */
+    justify-content: center;
+    gap: 8px; /* Khoảng cách giữa các mục menu */
 }
 
-nav li {
-    position: relative;
-}
-
-.menu-trigger {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.menu-trigger:hover, .menu-trigger.active {
-    background-color: #0056b3;
-}
-
-/* --- Submenu --- */
-.submenu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 10px); /* Khoảng cách 10px từ nút menu */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80vw; /* Chiều rộng lớn hơn */
-    max-width: 900px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    padding: 20px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Cột linh hoạt */
-    gap: 15px; /* Khoảng cách giữa các mục */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, top 0.3s ease;
-}
-
-.submenu.show {
-    display: grid;
-    opacity: 1;
-    visibility: visible;
-    top: calc(100% + 5px); /* Trượt xuống vị trí cuối cùng */
-}
-
-.submenu li a {
+.main-navigation li a {
     display: block;
-    padding: 12px;
-    color: #333;
+    padding: 10px 15px;
+    color: var(--dark-gray);
     text-decoration: none;
     border-radius: 5px;
-    text-align: center;
-    background-color: #f8f9fa;
-    transition: background-color 0.2s, color 0.2s;
+    background-color: var(--light-gray);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
     font-weight: 500;
+    border: 1px solid var(--border-color);
 }
 
-.submenu li a:hover {
-    background-color: #007bff;
-    color: white;
+.main-navigation li a:hover {
+    background-color: var(--primary-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+    border-color: var(--primary-hover);
+}
+
+.main-navigation li a.active {
+    background-color: var(--success-color);
+    color: var(--white);
+    border-color: var(--success-hover);
+    font-weight: 700;
 }
 
 
 /* --- Table Container & Layout --- */
 .table-container {
     display: flex;
+    flex-wrap: wrap; 
     gap: 20px;
     margin-top: 20px;
 }
 
 .table-half, .table-full {
-    flex: 1;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá rộng */
+    flex-grow: 1;
+    flex-shrink: 1;
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+.table-half {
+    flex-basis: calc(50% - 10px); 
+}
+.table-full {
+    flex-basis: 100%;
 }
 
+
 /* --- Table Styles --- */
-table {    
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
 table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
+    border: 1px solid var(--border-color);
+    padding: 12px;
     text-align: center;
     vertical-align: middle;
 }
 
 table th {
-    background-color: #f2f2f2;
-    font-weight: 600;
+    background-color: var(--light-gray);
+    font-weight: 700;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    font-size: 0.9em;
 }
 
 table caption {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: bold;
-    font-size: 1.2em;
-    color: #0056b3;
+    font-size: 1.4em;
+    color: var(--primary-hover);
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
 }
 
-.student-grade-table tbody tr:nth-child(even),
-.sample-comment-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+.student-grade-table tbody tr:hover,
+.sample-comment-table tbody tr:hover {
+    background-color: #e9ecef;
 }
 
 /* --- Buttons & Actions --- */
-.action-button {
-    margin-right: 10px;
-    margin-bottom: 15px;
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 500;
-    transition: background-color 0.3s;
-    display: none; /* JS sẽ kiểm soát hiển thị */
-}
-.action-button:hover {
-    background-color: #218838;
-}
-
-/* Nút sao chép có màu khác */
-#copy-bang-diem-btn, #copy-bang-diem-toan-btn, #copy-bang-diem-tnxh-btn, #copy-bang-diem-hdtn-btn, #copy-bang-diem-daoduc-btn, #copy-bang-diem-amnhac-btn, #copy-bang-diem-mithuat-btn, #copy-bang-diem-gdtc-btn, #copy-bang-diem-nlpc-btn {
-    background-color: #ffc107;
-    color: #333;
-}
-#copy-bang-diem-btn:hover, #copy-bang-diem-toan-btn:hover, #copy-bang-diem-tnxh-btn:hover, #copy-bang-diem-hdtn-btn:hover, #copy-bang-diem-daoduc-btn:hover, #copy-bang-diem-amnhac-btn:hover, #copy-bang-diem-mithuat-btn:hover, #copy-bang-diem-gdtc-btn:hover, #copy-bang-diem-nlpc-btn:hover {
-    background-color: #e0a800;
-}
-
-
 .table-actions {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: flex;
     gap: 10px;
-    flex-wrap: wrap; /* Cho phép các nút xuống dòng trên màn hình nhỏ */
-}
-.table-actions .action-button {
-    margin-bottom: 0;
+    flex-wrap: wrap;
 }
 
-.sample-comment-table .edit-btn,
-.sample-comment-table .reset-btn {
-    margin-left: 5px;
-    padding: 4px 8px;
-    font-size: 0.85em;
+.action-button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: none; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.sample-comment-table .content + .edit-btn {
-    margin-left: 10px;
+button[id^="nhap-nhan-xet"], button[id="nhap-nlpc-btn"] {
+    background-color: var(--success-color);
+    color: var(--white);
 }
+button[id^="nhap-nhan-xet"]:hover, button[id="nhap-nlpc-btn"]:hover {
+    background-color: var(--success-hover);
+}
+
+button[id^="copy-bang-diem"] {
+    background-color: var(--warning-color);
+    color: var(--dark-gray);
+}
+button[id^="copy-bang-diem"]:hover {
+    background-color: var(--warning-hover);
+}
+
+button[id^="export-"] {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+button[id^="export-"]:hover {
+    background-color: var(--secondary-hover);
+}
+
+button[id^="import-"] {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+button[id^="import-"]:hover {
+    background-color: var(--primary-hover);
+}
+
+
+/* Edit/Reset/Save buttons in sample tables */
+.sample-comment-table .edit-btn,
+.sample-comment-table .reset-btn,
+.sample-comment-table .custom-save-btn {
+    margin-left: 5px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+.sample-comment-table .content {
+    display: inline-block;
+    min-width: 70%;
+}
+.sample-comment-table .edit-btn { background-color: var(--info-color); color: white; }
+.sample-comment-table .edit-btn:hover { background-color: var(--info-hover); }
+.sample-comment-table .reset-btn { background-color: var(--danger-color); color: white; }
+.sample-comment-table .reset-btn:hover { background-color: var(--danger-hover); }
+.sample-comment-table .custom-save-btn { background-color: var(--success-color); color: white; }
+.sample-comment-table .custom-save-btn:hover { background-color: var(--success-hover); }
 
 .sample-comment-table input[type="text"] {
-    width: calc(100% - 120px); /* Điều chỉnh cho phù hợp với các nút */
-    padding: 6px;
+    width: calc(100% - 150px);
+    padding: 6px 10px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
-.sample-comment-table .custom-save-btn {
-    padding: 4px 8px;
-    font-size: 0.85em;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
+.sample-comment-table input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-/* --- Bảng NL-PC đặc thù --- */
+/* --- NL-PC Table Specific Styles --- */
 #bang-mau-nx-nlpc .main-category {
     font-weight: bold;
-    background-color: #e9ecef;
+    background-color: #343a40;
+    color: var(--white);
     text-align: center;
     font-size: 1.1em;
 }
@@ -239,5 +283,55 @@ table caption {
 
 #bang-mau-nx-nlpc th {
     text-align: center;
-    background-color: #d6e4f0;
+    background-color: #e2e6ea;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+}
+footer a {
+    color: var(--warning-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+footer a:hover {
+    color: var(--white);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .table-half {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    table, th, td {
+        font-size: 0.9em;
+    }
+    table caption {
+        font-size: 1.2em;
+    }
+    .action-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .table-actions {
+        flex-direction: column;
+    }
 }
