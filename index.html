@@ -11,33 +11,28 @@
 <body>
     <header>
         <div class="logo-container">
-            <!-- Đã thay đổi logo -->
             <img src="Computer.png" alt="Logo" class="logo">
         </div>
-        <nav>
+        <nav class="main-navigation">
             <ul>
-                <li class="has-submenu">
-                    <a href="#" class="menu-trigger">CHỌN MÔN HỌC (LỚP 1) &#9662;</a>
-                    <ul class="submenu">
-                        <li><a href="#">Môn TV</a></li>
-                        <li><a href="#">Môn Toán</a></li>
-                        <li><a href="#">Môn TNXH</a></li>
-                        <li><a href="#">HDTN</a></li>
-                        <li><a href="#">Môn Đạo đức</a></li>
-                        <li><a href="#">Âm Nhạc</a></li>
-                        <li><a href="#">Mĩ Thuật</a></li>
-                        <li><a href="#">GDTC</a></li>
-                        <li><a href="#">NL-PC</a></li>
-                        <li><a href="#">Mẫu NX</a></li>
-                    </ul>
-                </li>
+                <li><a href="#">Môn TV</a></li>
+                <li><a href="#">Môn Toán</a></li>
+                <li><a href="#">Môn TNXH</a></li>
+                <li><a href="#">HDTN</a></li>
+                <li><a href="#">Môn Đạo đức</a></li>
+                <li><a href="#">Âm Nhạc</a></li>
+                <li><a href="#">Mĩ Thuật</a></li>
+                <li><a href="#">GDTC</a></li>
+                <li><a href="#">Tiếng Anh</a></li> <!-- Môn mới đã được thêm -->
+                <li><a href="#">NL-PC</a></li>
+                <li><a href="#">Mẫu NX</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
         <div class="table-container">
-            <!-- Môn Tiếng Việt -->
+            <!-- Môn Tiếng Việt (Giữ nguyên) -->
             <div class="table-half" id="tv-content" style="display: none;">
                 <button id="nhap-nhan-xet-btn" class="action-button">Nhập nhận xét Môn TV</button>
                 <button id="copy-bang-diem-btn" class="action-button">Sao chép Bảng điểm Môn TV</button>
@@ -85,6 +80,7 @@
                 </table>
             </div>
 
+            <!-- Các môn khác (Toán, TNXH, ...) giữ nguyên -->
             <!-- Môn Toán -->
             <div class="table-half" id="toan-content" style="display: none;">
                  <button id="nhap-nhan-xet-toan-btn" class="action-button">Nhập nhận xét Môn Toán</button>
@@ -307,14 +303,14 @@
                     <tbody>
                         <tr><td rowspan="10">Hoàn thành tốt (T)</td><td><span class="content" data-default="Hát hay, biểu diễn tự nhiên.">Hát hay, biểu diễn tự nhiên.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Có năng khiếu hát và biểu diễn đẹp.">Có năng khiếu hát và biểu diễn đẹp.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
+                        <tr><td><span class="content" data-default="Có năng khiếu hát và biểu diễn đẹp.">Có năng khiếu hát và biểu diễn đẹp.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Hát đúng giai điệu và cảm thụ âm nhạc tốt.">Hát đúng giai điệu và cảm thụ âm nhạc tốt.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
+                        <tr><td><span class="content" data-default="Hát đúng giai điệu và cảm thụ âm nhạc tốt.">Hát đúng giai điệu và cảm thụ âm nhạc tốt.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
+                        <tr><td><span class="content" data-default="Hát hay và kết hợp với gõ đệm nhịp nhàng chính xác.">Hát hay và kết hợp với gõ đệm nhịp nhàng chính xác.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Hát hay và kết hợp với gõ đệm nhịp nhàng chính xác.">Hát hay và kết hợp với gõ đệm nhịp nhàng chính xác.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Hát đúng giai điệu kết hợp trò chơi âm nhạc.">Hát đúng giai điệu kết hợp trò chơi âm nhạc.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Mạnh dạn tự tin thể hiện bài hát rất hay.">Mạnh dạn tự tin thể hiện bài hát rất hay.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Biết thể hiện sắc thái tình cảm của bài hát.">Biết thể hiện sắc thái tình cảm của bài hát.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
-                        <tr><td><span class="content" data-default="Tích cực tham gia các hoạt động âm nhạc.">Tích cực tham gia các hoạt động âm nhạc.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
-                        <tr><td><span class="content" data-default="Có ý thức và thái độ học tập tốt.">Có ý thức và thái độ học tập tốt.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
-                        <tr><td><span class="content" data-default="Hoàn thành xuất sắc các nội dung của môn học.">Hoàn thành xuất sắc các nội dung của môn học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td rowspan="10">Hoàn thành (H)</td><td><span class="content" data-default="Thuộc lời ca, hát đúng giai điệu bài hát.">Thuộc lời ca, hát đúng giai điệu bài hát.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Biết hát kết hợp vận động phụ họa cho bài hát.">Biết hát kết hợp vận động phụ họa cho bài hát.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Hát đúng lời các bài hát, biết kết hợp gõ đệm.">Hát đúng lời các bài hát, biết kết hợp gõ đệm.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
@@ -323,8 +319,8 @@
                         <tr><td><span class="content" data-default="Biết gõ đệm theo tiết tấu lời ca, theo phách.">Biết gõ đệm theo tiết tấu lời ca, theo phách.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Hoàn thành các nội dung chương trình của từng bài trong tháng.">Hoàn thành các nội dung chương trình của từng bài trong tháng.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Hoàn thành các nội dung của môn học.">Hoàn thành các nội dung của môn học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
-                        <tr><td><span class="content" data-default="Có cố gắng trong học tập.">Có cố gắng trong học tập.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
-                        <tr><td><span class="content" data-default="Đạt yêu cầu cơ bản của môn học.">Đạt yêu cầu cơ bản của môn học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
+                        <tr><td><span class="content" data-default="Thuộc lời ca, hát đúng giai điệu bài hát.">Thuộc lời ca, hát đúng giai điệu bài hát.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
+                        <tr><td><span class="content" data-default="Hát đúng lời các bài hát, biết kết hợp gõ đệm.">Hát đúng lời các bài hát, biết kết hợp gõ đệm.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td rowspan="4">Chưa hoàn thành (C)</td><td><span class="content" data-default="Cần mạnh dạn, tự tin hơn khi biểu diễn.">Cần mạnh dạn, tự tin hơn khi biểu diễn.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Chưa thuộc lời bài hát, cần luyện tập thêm.">Chưa thuộc lời bài hát, cần luyện tập thêm.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Hát còn chưa đúng giai điệu và tiết tấu.">Hát còn chưa đúng giai điệu và tiết tấu.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
@@ -425,6 +421,153 @@
                         <tr><td><span class="content" data-default="Động tác thực hiện còn chậm, chưa đúng kỹ thuật.">Động tác thực hiện còn chậm, chưa đúng kỹ thuật.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Chưa chú ý lắng nghe hiệu lệnh của giáo viên.">Chưa chú ý lắng nghe hiệu lệnh của giáo viên.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
                         <tr><td><span class="content" data-default="Cần cố gắng hơn để hoàn thành bài tập.">Cần cố gắng hơn để hoàn thành bài tập.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Môn Tiếng Anh (Mới thêm) -->
+            <div class="table-half" id="tienganh-content" style="display: none;">
+                <button id="nhap-nhan-xet-tienganh-btn" class="action-button">Nhập nhận xét Môn Tiếng Anh</button>
+                <button id="copy-bang-diem-tienganh-btn" class="action-button">Sao chép Bảng điểm Môn Tiếng Anh</button>
+                <table id="bang-mon-tienganh" class="student-grade-table">
+                    <caption>Bảng điểm Môn Tiếng Anh</caption>
+                    <thead><tr><th>STT</th><th>Họ</th><th>Tên</th><th>Nhận xét</th><th>Điểm KT</th><th>XL</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="table-half" id="tienganh-sample" style="display: none;">
+                <div class="table-actions">
+                    <button id="export-tienganh-mau-btn" class="action-button">Xuất ra Excel (.xlsx)</button>
+                    <button id="import-tienganh-mau-btn" class="action-button">Nhập từ Excel (.xlsx)</button>
+                    <input type="file" id="import-tienganh-mau-input" accept=".xlsx, .xls" style="display: none;">
+                </div>
+                <!-- BẢNG MẪU TIẾNG ANH ĐƯỢC CẬP NHẬT -->
+                <table id="bang-mau-nhan-xet-tienganh" class="sample-comment-table">
+                    <caption>BẢNG MẪU NHẬN XÉT MÔN TIẾNG ANH</caption>
+                    <thead>
+                        <tr>
+                            <th>Điểm số</th>
+                            <th>Nội dung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">Điểm 10</td>
+                            <td><span class="content" data-default="Nắm vững kiến thức, kỹ năng của môn học. Nghe nói tốt, có vốn từ rộng.">Nắm vững kiến thức, kỹ năng của môn học. Nghe nói tốt, có vốn từ rộng.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Hoàn thành tốt kiến thức, kỹ năng môn học. Hăng hái giơ tay phát biểu.">Hoàn thành tốt kiến thức, kỹ năng môn học. Hăng hái giơ tay phát biểu.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Hoàn thành tốt kiến thức, kỹ năng môn học. Kỹ năng nói tốt, có vốn từ vựng rộng.">Hoàn thành tốt kiến thức, kỹ năng môn học. Kỹ năng nói tốt, có vốn từ vựng rộng.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">Điểm 9</td>
+                            <td><span class="content" data-default="Tiếp thu bài tốt, vận dụng thành thạo các mẫu câu.">Tiếp thu bài tốt, vận dụng thành thạo các mẫu câu.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Nắm vững kiến thức đã học. Tích cực chủ động thực hiện các nhiệm vụ học tập.">Nắm vững kiến thức đã học. Tích cực chủ động thực hiện các nhiệm vụ học tập.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Tiếp thu bài khá tốt. Thực hành thành thạo các bài tập.">Tiếp thu bài khá tốt. Thực hành thành thạo các bài tập.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Hoàn thành tốt nội dung môn học. Nghe, nói tốt.">Hoàn thành tốt nội dung môn học. Nghe, nói tốt.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Có vốn từ rộng. Kỹ năng nghe nói tốt.">Có vốn từ rộng. Kỹ năng nghe nói tốt.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="7">Điểm 8</td>
+                            <td><span class="content" data-default="Kỹ năng nghe, nói tốt, nắm chắc các kiến thức cơ bản.">Kỹ năng nghe, nói tốt, nắm chắc các kiến thức cơ bản.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Đọc to, rõ, trôi chảy, hoàn thành bài tập tốt.">Đọc to, rõ, trôi chảy, hoàn thành bài tập tốt.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Hiểu bài, nắm được các kiến thức cơ bản.">Hiểu bài, nắm được các kiến thức cơ bản.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Hoàn thành kiến thức, kĩ năng của môn học.">Hoàn thành kiến thức, kĩ năng của môn học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Nắm được kiến thức, kỹ năng cơ bản của môn học.">Nắm được kiến thức, kỹ năng cơ bản của môn học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Hoàn thành nói dung môn học theo chuẩn kiến thức, kỹ năng.">Hoàn thành nói dung môn học theo chuẩn kiến thức, kỹ năng.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Biết vận dụng các mẫu câu đã học.">Biết vận dụng các mẫu câu đã học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">Điểm 7</td>
+                            <td><span class="content" data-default="Nắm được kiến thức kĩ năng của môn học nhưng cần tích cực hơn.">Nắm được kiến thức kĩ năng của môn học nhưng cần tích cực hơn.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Nắm được kiến thức cơ bản của môn học. Cần rèn luyện kỹ năng đọc.">Nắm được kiến thức cơ bản của môn học. Cần rèn luyện kỹ năng đọc.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Nắm được kiến thức cơ bản của môn học. Cần rèn luyện kỹ năng nghe, nói.">Nắm được kiến thức cơ bản của môn học. Cần rèn luyện kỹ năng nghe, nói.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Hoàn thành các yêu cầu nội dung chương trình.">Hoàn thành các yêu cầu nội dung chương trình.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Hoàn thành nội dung kiến thức môn học.">Hoàn thành nội dung kiến thức môn học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="6">Điểm 6</td>
+                            <td><span class="content" data-default="Có tinh thần học tập tích cực nhưng cần rèn thêm về kỹ năng đọc.">Có tinh thần học tập tích cực nhưng cần rèn thêm về kỹ năng đọc.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Có tinh thần học tập tích cực nhưng cần rèn thêm về kỹ năng đọc.">Có tinh thần học tập tích cực nhưng cần rèn thêm về kỹ năng đọc.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Nắm được kiến thức cơ bản của môn học. Cần rèn luyện kỹ năng viết.">Nắm được kiến thức cơ bản của môn học. Cần rèn luyện kỹ năng viết.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Nắm được kiến thức cơ bản của môn học. Cần rèn luyện kỹ năng viết.">Nắm được kiến thức cơ bản của môn học. Cần rèn luyện kỹ năng viết.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Biết vận dụng các mẫu câu nhưng còn chậm.">Biết vận dụng các mẫu câu nhưng còn chậm.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Tiếp thu kiến thức còn chậm, kỹ năng sử dụng ngôn ngữ yếu.">Tiếp thu kiến thức còn chậm, kỹ năng sử dụng ngôn ngữ yếu.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <!-- **ĐÃ SỬA LỖI: Thêm mục Điểm 5** -->
+                        <tr>
+                            <td rowspan="3">Điểm 5</td>
+                            <td><span class="content" data-default="Cần cải thiện ngữ pháp và chính tả.">Cần cải thiện ngữ pháp và chính tả.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Kỹ năng vận dụng mẫu câu còn yếu, cần luyện tập thêm.">Kỹ năng vận dụng mẫu câu còn yếu, cần luyện tập thêm.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Nắm được kiến thức cơ bản nhưng chưa vững.">Nắm được kiến thức cơ bản nhưng chưa vững.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <!-- **Kết thúc phần sửa lỗi** -->
+                        <tr>
+                            <td rowspan="7">DƯỚI 5</td>
+                            <td><span class="content" data-default="Kỹ năng nghe còn hạn chế, khi nghe nên chú ý vào các từ khóa.">Kỹ năng nghe còn hạn chế, khi nghe nên chú ý vào các từ khóa.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Cần trau dồi thêm vốn từ vựng.">Cần trau dồi thêm vốn từ vựng.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Cần luyện tập vận dụng các mẫu câu.">Cần luyện tập vận dụng các mẫu câu.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Chưa ghi nhớ được từ vựng, cần trau dồi thêm.">Chưa ghi nhớ được từ vựng, cần trau dồi thêm.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Chưa hoàn thành nội dung kiến thức của môn học.">Chưa hoàn thành nội dung kiến thức của môn học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Chưa nắm được kiến thức cơ bản của môn học.">Chưa nắm được kiến thức cơ bản của môn học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td><span class="content" data-default="Nắm được kiến thức cơ bản của môn học.">Nắm được kiến thức cơ bản của môn học.</span><button class="edit-btn">Sửa</button><button class="reset-btn">Reset</button></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -968,4 +1111,4 @@
 
     <script src="script.js"></script>
 </body>
-</ht
+</html>
