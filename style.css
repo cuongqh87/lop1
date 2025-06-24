@@ -1,0 +1,243 @@
+/* --- Cài đặt chung & Phông chữ --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* --- Header & Logo & Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 50px;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    position: relative;
+}
+
+.menu-trigger {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.menu-trigger:hover, .menu-trigger.active {
+    background-color: #0056b3;
+}
+
+/* --- Submenu --- */
+.submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); /* Khoảng cách 10px từ nút menu */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw; /* Chiều rộng lớn hơn */
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Cột linh hoạt */
+    gap: 15px; /* Khoảng cách giữa các mục */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, top 0.3s ease;
+}
+
+.submenu.show {
+    display: grid;
+    opacity: 1;
+    visibility: visible;
+    top: calc(100% + 5px); /* Trượt xuống vị trí cuối cùng */
+}
+
+.submenu li a {
+    display: block;
+    padding: 12px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+.submenu li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* --- Table Container & Layout --- */
+.table-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.table-half, .table-full {
+    flex: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá rộng */
+}
+
+/* --- Table Styles --- */
+table {    
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+table caption {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #0056b3;
+}
+
+.student-grade-table tbody tr:nth-child(even),
+.sample-comment-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* --- Buttons & Actions --- */
+.action-button {
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    display: none; /* JS sẽ kiểm soát hiển thị */
+}
+.action-button:hover {
+    background-color: #218838;
+}
+
+/* Nút sao chép có màu khác */
+#copy-bang-diem-btn, #copy-bang-diem-toan-btn, #copy-bang-diem-tnxh-btn, #copy-bang-diem-hdtn-btn, #copy-bang-diem-daoduc-btn, #copy-bang-diem-amnhac-btn, #copy-bang-diem-mithuat-btn, #copy-bang-diem-gdtc-btn, #copy-bang-diem-nlpc-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+#copy-bang-diem-btn:hover, #copy-bang-diem-toan-btn:hover, #copy-bang-diem-tnxh-btn:hover, #copy-bang-diem-hdtn-btn:hover, #copy-bang-diem-daoduc-btn:hover, #copy-bang-diem-amnhac-btn:hover, #copy-bang-diem-mithuat-btn:hover, #copy-bang-diem-gdtc-btn:hover, #copy-bang-diem-nlpc-btn:hover {
+    background-color: #e0a800;
+}
+
+
+.table-actions {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Cho phép các nút xuống dòng trên màn hình nhỏ */
+}
+.table-actions .action-button {
+    margin-bottom: 0;
+}
+
+.sample-comment-table .edit-btn,
+.sample-comment-table .reset-btn {
+    margin-left: 5px;
+    padding: 4px 8px;
+    font-size: 0.85em;
+    cursor: pointer;
+}
+
+.sample-comment-table .content + .edit-btn {
+    margin-left: 10px;
+}
+
+.sample-comment-table input[type="text"] {
+    width: calc(100% - 120px); /* Điều chỉnh cho phù hợp với các nút */
+    padding: 6px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.sample-comment-table .custom-save-btn {
+    padding: 4px 8px;
+    font-size: 0.85em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+/* --- Bảng NL-PC đặc thù --- */
+#bang-mau-nx-nlpc .main-category {
+    font-weight: bold;
+    background-color: #e9ecef;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+#bang-mau-nx-nlpc .sub-category {
+    font-weight: 500;
+    background-color: #f8f9fa;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#bang-mau-nx-nlpc td {
+    text-align: left;
+    padding-left: 10px;
+}
+
+#bang-mau-nx-nlpc th {
+    text-align: center;
+    background-color: #d6e4f0;
+}
